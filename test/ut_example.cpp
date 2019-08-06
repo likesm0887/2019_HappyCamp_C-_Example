@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include "../src/triangle.h"
-#include "../src/triangle_factory.h"
 int main(int argc, char ** argv)
 {
   testing::InitGoogleTest(&argc, argv);
@@ -8,30 +7,19 @@ int main(int argc, char ** argv)
 }
 
 
- TEST(Triangle2, TriangleNormal)
+ TEST(Triangle, createTriangle)
  {
-	 Triangle *t = new Triangle(3, 4, 5);
-	 ASSERT_TRUE(t->isTriangle(3,4,5));
-	
+	 Triangle *triangle = new Triangle(5,7,6);
+	 ASSERT_EQ(5,triangle->getSideA());
  }
+
  TEST(Triangle2, TriangleIllegal)
  {
-	 ASSERT_ANY_THROW(new Triangle(0, 6, 5));
+	 Triangle *triangle = new Triangle(1, 2, 5);
+	 ASSERT_FALSE(triangle->isTriangle(1,2,5));
  }
 
- TEST(Triangle2, TriangCreateleIllegal)
- {
-	 TriangleFactory *tf = new TriangleFactory();
-	 ASSERT_EQ(nullptr,tf->create(0, 4, 5));
-
- }
  
- TEST(Triangle2, TriangCreateNormal)
- {
-	 TriangleFactory *tf = new TriangleFactory();
-	 ASSERT_EQ(3, tf->create(3, 4, 5)->getSideA());
- }
-
 
 
 

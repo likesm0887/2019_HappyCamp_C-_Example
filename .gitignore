@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+ut_fs.gcda
+ut_fs.gcno
