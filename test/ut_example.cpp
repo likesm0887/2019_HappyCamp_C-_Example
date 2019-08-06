@@ -13,11 +13,14 @@ int main(int argc, char ** argv)
 	 ASSERT_EQ(5,triangle->getSideA());
  }
 
- TEST(Triangle2, TriangleIllegal)
+ TEST(Triangle, createIllegalTriangle)
  {
-	 Triangle *triangle = new Triangle(1, 2, 5);
-	 ASSERT_FALSE(triangle->isTriangle(1,2,5));
+	// Triangle *triangle = new Triangle(1, 2, 5);
+	// ASSERT_FALSE(triangle->isTriangle(1,2,5));
+	 ASSERT_ANY_THROW(new Triangle(1, 2, 5));
  }
+
+ 
 
  
 

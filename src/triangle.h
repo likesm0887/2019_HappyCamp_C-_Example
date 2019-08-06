@@ -9,11 +9,11 @@ public:
 	Triangle() {};
 	
 	Triangle(int a , int b ,int c ) :_sideA(a),_sideB(b), _sideC(c){
-	/*
+	
 		if (!isTriangle(a,b,c))
 		{
 			throw std::string("illegal triangle");
-		}*/
+		}
 	}
 	//判斷可否構成三角形
 	bool isTriangle(int a, int b, int c) {
