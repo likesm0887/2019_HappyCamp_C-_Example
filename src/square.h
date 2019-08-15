@@ -1,13 +1,11 @@
 #pragma once
+#include"Shape.h"
 class Square :public Shape
 {
 public:
-	Square(double side):_side(side){}
+	Square(double side);
+	const double area();
 
-	const double area()
-	{
-		return _side * _side;
-	}
 private:
 	double _side;
 };
