@@ -8,19 +8,19 @@ public:
 		questionVector.push_back(question);
 
 	}
-	int scoreCal() {
-		Iterator it = questionVector.begin();
-		int totalScore;
-		int temp = 0;
-		for (it != questionVector.end(); ++it)
+	double scoreCal() {
+        vector<Question* >::iterator it;
+		double totalScore;
+		double temp = 0;
+		for (it = questionVector.begin(); it != questionVector.end(); ++it)
 		{
 			if (it.index % 2 == 0)
 			{
-				temp = *it.getScore()*2.5;
+				temp = (*it)->getScore()*2.5;
 			}
 			else
 			{
-				temp = *it.getScore();
+				temp = (*it)->getScore();
 			}
 			totalScore += temp;
 		}
@@ -29,7 +29,7 @@ public:
 
 	void changeQuestionScore(Question q, String  score)
 	{
-		q.setQuestion(score);
+		q.setScore(score);
 	}
 
 private:
